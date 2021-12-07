@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <title>Liu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="./jquer.min.js"></script>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2898773_62xe8cwnq05.css">
+
+  <style>
+    @font-face {
+      font-family: 'ZoomlaYuan-A016';
+      /*逐浪圆体*/
+      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix');
+      /* IE9 */
+      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix') format("embedded-opentype"),
+        /* IE6-IE8 */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.woff') format("woff"),
+        /* chrome、firefox */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.ttf') format("truetype"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.svg#ZoomlaYuan-A016') format("svg");
+      /* iOS 4.1- */
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: initial;
+    }
+
+    body {
+      position: relative;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(233, 144, 159);
+      /* background-color: slategrey; */
+      font-family: ZoomlaYuan-A016;
+      padding: 1.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text"></div>
+
+</body>
+<script>
+  window.onload = function () {
+    var str = '制作一个属于我们的网页https://keaiz.vercel.app';
+    var text = '';
+    var i = 0;
+    var time = setInterval(() => {
+      text += str[i];
+
+      if (i == str.length - 1) {
+        clearInterval(time);
+      }
+      $('.text').text(text);
+      i++;
+    }, 100)
+  }
+</script>
+
+</html>
