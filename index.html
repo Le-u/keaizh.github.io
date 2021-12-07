@@ -62,6 +62,7 @@
     var str = '制作一个属于我们的网页https://keaiz.vercel.app';
     var text = '';
     var i = 0;
+    var boot = true;
     var time = setInterval(() => {
       text += str[i];
 
@@ -73,15 +74,15 @@
     }, 100)
 
 
-    var a = setInterval(()=>{
-      $('.fusn').hide()
-    },300)
-    var b = setInterval(()=>{
-      $('.fusn').show()
-    },300)
+    setInterval(()=>{
+      if(boot){
+        $('.fusn').hide()
+      }else{
+        $('.fusn').show()
+      }
+    },100)
+
   }
-
-
 
 </script>
 
