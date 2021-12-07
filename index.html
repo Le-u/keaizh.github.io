@@ -52,7 +52,7 @@
 </head>
 
 <body>
-  <div class="text"></div>
+  <div><span class="text"></span><span class="fusn">|</span></div>
 
 
 
@@ -71,7 +71,18 @@
       $('.text').text(text);
       i++;
     }, 100)
+
+
+    var a = setInterval(()=>{
+      $('.fusn').hide()
+    },300)
+    var b = setInterval(()=>{
+      $('.fusn').show()
+    },300)
   }
+
+
+
 </script>
 
 </html>
