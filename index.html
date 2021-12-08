@@ -66,20 +66,26 @@
     var time = setInterval(() => {
       text += str[i];
 
-      if (boot) {
+      if (i == str.length - 1) {
+        clearInterval(time);
+      }
+      $('.text').text(text);
+      i++;
+    }, 200)
+
+
+    setInterval(()=>{
+      if(boot){
+        boot = !boot
         $('.fusn').hide()
-      } else {
+      }else{
+        boot = !boot
         $('.fusn').show()
       }
-      if (i < str.length) {
-        text += str[i];
-        $('.text').text(text);
-        i++;
-      }
-    }, 100)
-
+    },100)
 
   }
+
 </script>
 
 </html>
