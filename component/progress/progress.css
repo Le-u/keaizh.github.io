@@ -1,0 +1,48 @@
+.glass {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.glass-module {
+  position: absolute;
+  top: 1.875rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 1.40625rem;
+  width: 80%;
+  height: 3.125rem;
+  border-radius: 0.3125rem;
+}
+.progress-text{
+  text-align: center;
+}
+
+
+.progress {
+  width: 0;
+  height: 5px;
+  background-color: darkcyan;
+  /* animation-name: progress;
+  animation-duration: 5s; */
+  animation-timing-function: linear;
+  transition: 0.05s;
+}
+
+
+
+/* @keyframes progress {
+  0% {
+    width: 0;
+  }
+
+  50%{
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+} */
+
+

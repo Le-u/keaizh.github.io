@@ -11,6 +11,7 @@
   <script src="./jquer.min.js"></script>
   <link rel="stylesheet" href="//at.alicdn.com/t/font_2898773_62xe8cwnq05.css">
 
+  <link rel="stylesheet" href="./component/progress/progress.css">
   <style>
     @font-face {
       font-family: 'ZoomlaYuan-A016';
@@ -43,10 +44,19 @@
       margin: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgb(233, 144, 159);
-      /* background-color: slategrey; */
+      /* background-color: rgb(233, 144, 159); */
+      background-color: slategrey;
       font-family: ZoomlaYuan-A016;
       padding: 1.25rem;
+    }
+
+
+    .password {
+      position: absolute;
+      border: 4px solid #000;
+      top: 150px;
+      width: 50px;
+      height: 50px;
     }
   </style>
 </head>
@@ -55,11 +65,32 @@
   <div><span class="text"></span><span class="fusn">|</span></div>
 
 
+  <div class="password"></div>
 
+
+  <div class="glass glass-module">
+    <div class="progress-text"></div>
+    <div class="progress"></div>
+  </div>
 </body>
+<script src="./component/progress/progress.js"></script>
 <script>
   window.onload = function () {
-    var str = '制作一个属于我们的网页https://keaiz.vercel.app';
+
+    $(".password").on('touchstart',function () {
+      console.log('xx');
+      enterProgress()
+    });
+
+    $('.password').on('touchend',function () {
+      outProgress()
+      });
+  }
+
+
+
+  var autoText = function () {
+    var str = '首次进入请输入密码';
     var text = '';
     var i = 0;
     var boot = true;
@@ -74,18 +105,16 @@
     }, 200)
 
 
-    setInterval(()=>{
-      if(boot){
+    setInterval(() => {
+      if (boot) {
         boot = !boot
         $('.fusn').hide()
-      }else{
+      } else {
         boot = !boot
         $('.fusn').show()
       }
-    },200)
-
+    }, 200)
   }
-
 </script>
 
 </html>
