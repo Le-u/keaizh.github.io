@@ -3,7 +3,8 @@ let enterTime = null,
   outTime = null;
 
 function enterProgress() {
-  if(progress === 100){
+  $('.glass-module').show();
+  if (progress === 100) {
     progress = 0;
   }
   if (!enterTime) {
@@ -11,6 +12,7 @@ function enterProgress() {
     outTime = null;
     enterTime = setInterval(() => {
       progress++
+      $('.progress-text').text(progress + '%')
       $('.progress').css({
         width: progress + '%'
       })
@@ -18,9 +20,12 @@ function enterProgress() {
       if (progress === 100) {
         clearInterval(enterTime)
         enterTime = null;
+        return progress;
       }
     }, 50)
   }
+
+
 }
 
 
@@ -29,15 +34,19 @@ function outProgress() {
     clearInterval(enterTime);
     enterTime = null;
     outTime = setInterval(() => {
-      progress--
+      progress--;
+      $('.progress-text').text(progress + '%')
       $('.progress').css({
         width: progress + '%'
       })
 
-      if (!progress) {
+      if (!progress || progress < 0) {
+        $('.glass-module').hide();
         clearInterval(outTime)
         outTime = null;
+        return progress;
       }
     }, 50)
   }
+
 }
