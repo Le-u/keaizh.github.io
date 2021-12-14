@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="//at.alicdn.com/t/font_2898773_62xe8cwnq05.css">
 
   <link rel="stylesheet" href="./component/progress/progress.css">
+  <link rel="stylesheet" href="./component/land/land.css">
   <style>
     @font-face {
       font-family: 'ZoomlaYuan-A016';
@@ -69,22 +70,29 @@
 
 
   <div class="glass glass-module">
-    <div class="progress-text"></div>
+    <div class="progress-text">100%</div>
     <div class="progress"></div>
   </div>
+
+
+
 </body>
 <script src="./component/progress/progress.js"></script>
+<script src="./component/land/land.js"></script>
 <script>
   window.onload = function () {
 
     $(".password").on('touchstart',function () {
-      console.log('xx');
-      enterProgress()
+      var a = enterProgress()
+      console.log(a);
     });
 
     $('.password').on('touchend',function () {
       outProgress()
       });
+
+
+      landFun('mua',50)
   }
 
 
