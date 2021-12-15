@@ -32,6 +32,10 @@
       font-weight: normal;
     }
 
+    html{
+      font-size: 10vw;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -49,35 +53,59 @@
       /* background-color: rgb(233, 144, 159); */
       background-color: slategrey;
       font-family: ZoomlaYuan-A016;
-      padding: 1.25rem;
-      background-image: url('./img/轲爱🐖.jpg');
-      background-position: center;
-      background-size: 100% 100%;
+      padding: 0.533333rem;
+    }
+
+    .bg{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 6.666667rem;
+      height: 12rem;
       opacity: 0.1;
+    }
+
+    .bg img{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 5.333333rem;
+      height: 8rem;
+      object-fit: cover;
     }
 
     .glass {
       background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(0.3125rem);
+      backdrop-filter: blur(0.133333rem);
     }
 
 
 
     .password {
       position: absolute;
-      border: 4px solid #000;
-      top: 150px;
-      width: 50px;
-      height: 50px;
+      top: 5.333333rem;
+      left: 2.933333rem;
+      width: 0.933333rem;
+      height: 0.4rem;
+      border: 1px solid #fff;
     }
   </style>
 </head>
 
 <body>
-  <div><span class="text"></span><span class="fusn">|</span></div>
+  <div class="bg glass">
+    <img src="./img/轲爱🐖.jpg" alt="">
+    <div class="password"></div>
+  </div>
+  <!-- <div><span class="text"></span><span class="fusn">|</span></div> -->
 
 
-  <div class="password"></div>
 
 
   <div class="glass glass-module">

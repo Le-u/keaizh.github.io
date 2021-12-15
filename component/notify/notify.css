@@ -9,6 +9,7 @@
 }
 
 .notify-text{
-  padding: 0.625rem 0.9375rem;
-  border-radius: 0.3125rem;
+  padding: 0.266667rem 0.4rem;
+  border-radius: 0.133333rem;
+  font-size: 0.426667rem;
 }
