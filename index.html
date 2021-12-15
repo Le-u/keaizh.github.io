@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="./component/progress/progress.css">
   <link rel="stylesheet" href="./component/land/land.css">
+  <link rel="stylesheet" href="./component/notify/notify.css">
   <style>
     @font-face {
       font-family: 'ZoomlaYuan-A016';
@@ -51,6 +52,12 @@
       padding: 1.25rem;
     }
 
+    .glass {
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(0.3125rem);
+    }
+
+
 
     .password {
       position: absolute;
@@ -75,24 +82,33 @@
   </div>
 
 
-
 </body>
 <script src="./component/progress/progress.js"></script>
 <script src="./component/land/land.js"></script>
+<script src="./component/notify/notify.js"></script>
 <script>
   window.onload = function () {
 
-    $(".password").on('touchstart',function () {
-      var a = enterProgress()
-      console.log(a);
+    $(".password").on('touchstart', function () {
+      enterProgress().then((res) => {
+        notifyFun('解锁成功，亲我干啥', {
+          color: 'red'
+        }, 5)
+
+        landFun('♥', {
+          color: 'red'
+        }, 20, 3)
+      });
     });
 
-    $('.password').on('touchend',function () {
-      outProgress()
-      });
+    $('.password').on('touchend', function () {
+      outProgress().then((res)=>{
+        notifyFun('松的太快了', {
+          color: '#fff'
+        }, 5)
+      })
+    });
 
-
-      landFun('mua',50)
   }
 
 
