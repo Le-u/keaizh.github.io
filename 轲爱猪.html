@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <title>轲爱🐖</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="./jquer.min.js"></script>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2898773_62xe8cwnq05.css">
+
+  <link rel="stylesheet" href="./component/progress/progress.css">
+  <link rel="stylesheet" href="./component/land/land.css">
+  <link rel="stylesheet" href="./component/notify/notify.css">
+  <style>
+    @font-face {
+      font-family: 'ZoomlaYuan-A016';
+      /*逐浪圆体*/
+      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix');
+      /* IE9 */
+      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix') format("embedded-opentype"),
+        /* IE6-IE8 */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.woff') format("woff"),
+        /* chrome、firefox */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.ttf') format("truetype"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.svg#ZoomlaYuan-A016') format("svg");
+      /* iOS 4.1- */
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    html{
+      font-size: 10vw;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: initial;
+    }
+
+    body {
+      position: relative;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      /* background-color: rgb(233, 144, 159); */
+      background-color: slategrey;
+      font-family: ZoomlaYuan-A016;
+      padding: 0.533333rem;
+    }
+
+    .bg{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 6.666667rem;
+      height: 12rem;
+      opacity: 0.1;
+    }
+
+    .bg img{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 5.333333rem;
+      height: 8rem;
+      object-fit: cover;
+    }
+
+    .glass {
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(0.133333rem);
+    }
+
+
+
+    .password {
+      position: absolute;
+      top: 5.333333rem;
+      left: 2.933333rem;
+      width: 0.933333rem;
+      height: 0.4rem;
+      border: 1px solid #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg glass">
+    <img src="./img/轲爱🐖.jpg" alt="">
+    <div class="password"></div>
+  </div>
+  <!-- <div><span class="text"></span><span class="fusn">|</span></div> -->
+
+
+
+
+  <div class="glass glass-module">
+    <div class="progress-text">100%</div>
+    <div class="progress"></div>
+  </div>
+
+
+</body>
+<script src="./component/progress/progress.js"></script>
+<script src="./component/land/land.js"></script>
+<script src="./component/notify/notify.js"></script>
+<script>
+  window.onload = function () {
+
+    $(".password").on('touchstart', function () {
+      enterProgress().then((res) => {
+        notifyFun('解锁成功，亲我干啥', {
+          color: 'red'
+        }, 5)
+
+        landFun('♥', {
+          color: 'red'
+        }, 20, 3)
+        landFun('😙', {
+          color: 'red'
+        }, 20, 3)
+      });
+    });
+
+    $('.password').on('touchend', function () {
+      outProgress().then((res)=>{
+        notifyFun('松的太快了', {
+          color: '#fff'
+        }, 5)
+      })
+    });
+
+  }
+
+
+
+  var autoText = function () {
+    var str = '首次进入请输入密码';
+    var text = '';
+    var i = 0;
+    var boot = true;
+    var time = setInterval(() => {
+      text += str[i];
+
+      if (i == str.length - 1) {
+        clearInterval(time);
+      }
+      $('.text').text(text);
+      i++;
+    }, 200)
+
+
+    setInterval(() => {
+      if (boot) {
+        boot = !boot
+        $('.fusn').hide()
+      } else {
+        boot = !boot
+        $('.fusn').show()
+      }
+    }, 200)
+  }
+</script>
+
+</html>
