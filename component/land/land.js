@@ -10,6 +10,7 @@
         .css({
           left: Math.random() * $('body').innerWidth() + 'px',
           transition: `${speed}s linear`,
+          transform: `rotate(${(Math.random() * -90) + 45 + 'deg'})`,
           ...obj
         })
         .appendTo('body')
