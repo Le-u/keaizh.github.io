@@ -164,32 +164,7 @@
 
 
 
-  var autoText = function () {
-    var str = '首次进入请输入密码';
-    var text = '';
-    var i = 0;
-    var boot = true;
-    var time = setInterval(() => {
-      text += str[i];
 
-      if (i == str.length - 1) {
-        clearInterval(time);
-      }
-      $('.text').text(text);
-      i++;
-    }, 200)
-
-
-    setInterval(() => {
-      if (boot) {
-        boot = !boot
-        $('.fusn').hide()
-      } else {
-        boot = !boot
-        $('.fusn').show()
-      }
-    }, 200)
-  }
 </script>
 
 </html>

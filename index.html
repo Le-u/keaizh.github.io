@@ -6,10 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <script src="./jquer.min.js"></script>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2898773_62xe8cwnq05.css">
+  <!-- 飘落 -->
   <link rel="stylesheet" href="./component/land/land.css">
   <script src="./component/land/land.js"></script>
-  <script src="./jquer.min.js"></script>
+  <!-- 自动打字 -->
+  <link rel="stylesheet" href="./component/autoText/autoText.css">
+  <script src="./component/autoText/autoText.js"></script>
   <style>
+    @font-face {
+      font-family: 'ZoomlaYuan-A016';
+      /* 逐浪圆体 */
+      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix');
+      /* IE9 */
+      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix') format("embedded-opentype"),
+        /* IE6-IE8 */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.woff') format("woff"),
+        /* chrome、firefox */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.ttf') format("truetype"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+        url('https://code.z01.com/font/ZoomlaYuan-A016.svg#ZoomlaYuan-A016') format("svg");
+      /* iOS 4.1- */
+      font-style: normal;
+      font-weight: normal;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -22,6 +44,7 @@
       padding: 0;
       border: 0;
       position: relative;
+      font-family: ZoomlaYuan-A016;
       /* background-image: url('./img/轲爱🐖.jpg'); */
       /* background-repeat: no-repeat; */
       /* background-size: 100%; */
@@ -114,44 +137,65 @@
       width: 100%;
       height: 100%;
       background-color: #020225;
-      text-align: right;
-      padding: 20px 50px;
+      padding: 20px 30px;
+      overflow: hidden;
     }
 
     .yuan {
+      float: right;
       width: 100px;
       height: 100px;
       border-radius: 50%;
       background-color: #ffffcc;
-      display: inline-block;
+    }
+
+    .day-text {
+      float: left;
+      width: calc(100% - 100px);
+      word-wrap: break-word;
+      letter-spacing: 5px;
     }
   </style>
 </head>
 
 <body marginwidth="0" marginheight="0">
   <div class="day">
+    <div class="day-text"></div>
     <div class="yuan"></div>
     <canvas id="c" height="356" width="375">
   </div>
 
 
   <script>
-    
+    landFun('♥', {
+      color: 'red',
+      fontSize: '16px'
+    }, 15);
 
+
+    landFun('😙', {
+      fontSize: '16px'
+    }, 15)
+    landFun('🥰', {
+      fontSize: '16px'
+    }, 15)
+    landFun('圣诞快乐', {
+      color: '#fff',
+      fontSize: '16px'
+    }, 15).then(() => {
+      setTimeout(() => {
+
+        autoText('.day-text', '韩璐轲', {
+          color: '#fff'
+        })
+      }, 1000)
+    })
   </script>
   <script>
     var b = document.body;
     var c = document.getElementsByTagName('canvas')[0];
     var a = c.getContext('2d');
     document.body.clientWidth;
-
-    landFun('♥', {
-      color: 'red',
-      fontSize: '16px'
-    });
-    landFun('😙',{fontSize: '16px'})
-    landFun('🥰圣诞快乐',{color: '#fff',fontSize: '16px'})
-
   </script>
   <script>
     M = Math;
@@ -217,7 +261,7 @@
           M[L[3] + 1], 207 + L[0] * A + L[2] * T(D) >> 0, L[1] >> 1)) {
         if (i == 2e3)
           a.fillText(
-            '韩璐轲圣诞快乐',
+            '宝，圣诞快乐',
             U, 345);
         if (!(i % 7))
           a.drawImage(
