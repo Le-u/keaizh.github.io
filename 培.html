@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>培</title>
   <link rel="icon" href="./img/培.jpg" type="image/x-icon">
+  <script src="./jquer.min.js"></script>
   <style>
-      @font-face {
+    @font-face {
       font-family: 'ZoomlaYuan-A016';
       /* 逐浪圆体 */
       src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix');
@@ -27,7 +29,7 @@
     * {
       box-sizing: border-box;
     }
-
+ 
     html,
     body {
       width: 100%;
@@ -43,14 +45,57 @@
     }
 
 
+    .snow {
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-image: url('./img/雪花.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+
     img{
       width: 100%;
     }
+    
   </style>
 </head>
+
 <body>
   培
-  
   <img src="./img/圣诞树2.png" alt="">
+
 </body>
+<script>
+  var landFun = function (txt, obj, quantity = 50, speed = 5) {
+    let i = 0;
+    var time = setInterval(() => {
+
+        var land = $('<div class="snow"></div>')
+          .text(txt)
+          .css({
+            left: Math.random() * $('body').innerWidth() + 'px',
+            transition: `${speed}s linear`,
+            transform: `rotate(${(Math.random() * 360) + 'deg'})`,
+            ...obj
+          })
+          .appendTo('body')
+          .css({
+            top: $('body').innerHeight() + 'px',
+
+          })
+
+        setTimeout(() => {
+          land.remove()
+        }, speed * 1000)
+
+
+    }, 50)
+
+  }
+
+  landFun()
+</script>
+
 </html>
