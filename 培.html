@@ -8,6 +8,9 @@
   <title>培</title>
   <link rel="icon" href="./img/培.jpg" type="image/x-icon">
   <script src="./jquer.min.js"></script>
+
+  <link rel="stylesheet" href="./component/snow/snow.css">
+  <script src="./component/snow/snow.js"></script>
   <style>
     @font-face {
       font-family: 'ZoomlaYuan-A016';
@@ -45,15 +48,7 @@
     }
 
 
-    .snow {
-      position: absolute;
-      top: 0;
-      width: 10px;
-      height: 10px;
-      background-image: url('./img/雪花.png');
-      background-repeat: no-repeat;
-      background-size: 100%;
-    }
+   
 
     img{
       width: 100%;
@@ -68,34 +63,7 @@
 
 </body>
 <script>
-  var landFun = function (txt, obj, quantity = 50, speed = 5) {
-    let i = 0;
-    var time = setInterval(() => {
-
-        var land = $('<div class="snow"></div>')
-          .text(txt)
-          .css({
-            left: Math.random() * $('body').innerWidth() + 'px',
-            transition: `${speed}s linear`,
-            transform: `rotate(${(Math.random() * 360) + 'deg'})`,
-            ...obj
-          })
-          .appendTo('body')
-          .css({
-            top: $('body').innerHeight() + 'px',
-
-          })
-
-        setTimeout(() => {
-          land.remove()
-        }, speed * 1000)
-
-
-    }, 50)
-
-  }
-
-  landFun()
+  snow()
 </script>
 
 </html>

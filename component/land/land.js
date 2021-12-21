@@ -1,4 +1,9 @@
-  var landFun = function (txt, obj,quantity = 50,speed = 5) {
+  // txt(string): 显示的文本
+  // style(object): 样式
+  // quantity(number): 下落的数量
+  // speed(number): 下落的速度
+  
+  var landFun = function (txt, style,quantity = 30,speed = 5) {
   let i = 0;
 
     return new Promise((res)=>{
@@ -12,7 +17,7 @@
               left: Math.random() * $('body').innerWidth() + 'px',
               transition: `${speed}s linear`,
               transform: `rotate(${(Math.random() * -90) + 45 + 'deg'})`,
-              ...obj
+              ...style
             })
             .appendTo('body')
             .css({
@@ -21,7 +26,7 @@
     
           setTimeout(() => {
             land.remove()
-          }, 5000)
+          }, speed * 1000)
           i++;
     
     
