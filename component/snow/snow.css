@@ -1,0 +1,9 @@
+.snow {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-image: url('./img/雪花.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
