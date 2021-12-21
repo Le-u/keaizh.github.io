@@ -10,70 +10,38 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="./jquer.min.js"></script>
   <link rel="stylesheet" href="//at.alicdn.com/t/font_2898773_62xe8cwnq05.css">
-
+  <link rel="stylesheet" href="/css/reset.css">
+  <!-- 导入插件 -->
   <link rel="stylesheet" href="./component/progress/progress.css">
   <link rel="stylesheet" href="./component/land/land.css">
   <link rel="stylesheet" href="./component/notify/notify.css">
+  <script src="./component/progress/progress.js"></script>
+  <script src="./component/land/land.js"></script>
+  <script src="./component/notify/notify.js"></script>
   <style>
-    /* @font-face { */
-      /* font-family: 'ZoomlaYuan-A016'; */
-      /*逐浪圆体*/
-      /* src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix'); */
-      /* IE9 */
-      /* src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix') format("embedded-opentype"), */
-        /* IE6-IE8 */
-        /* url('https://code.z01.com/font/ZoomlaYuan-A016.woff') format("woff"), */
-        /* chrome、firefox */
-        /* url('https://code.z01.com/font/ZoomlaYuan-A016.ttf') format("truetype"), */
-        /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
-        /* url('https://code.z01.com/font/ZoomlaYuan-A016.svg#ZoomlaYuan-A016') format("svg"); */
-      /* iOS 4.1- */
-      /* font-style: normal; */
-      /* font-weight: normal; */
-    /* } */
-
-    html{
-      font-size: 10vw;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    a {
-      text-decoration: none;
-      color: initial;
-    }
 
     body {
-      position: relative;
-      margin: 0;
-      width: 100vw;
-      height: 100vh;
-      /* background-color: rgb(233, 144, 159); */
-      background-color: slategrey;
-      font-family: ZoomlaYuan-A016;
-      padding: 0.533333rem;
       background-image: url('./img/圣诞.png');
       background-position: center;
       background-repeat: no-repeat;
       background-size: 100%;
+      padding: 0;
     }
 
-    .bg{
+    .bg {
       position: absolute;
       left: 0;
       top: 0;
       right: 0;
       bottom: 0;
       margin: auto;
-      width: 6.666667rem;
-      height: 12rem;
+      width: 15.625rem;
+      height: 28.125rem;
       text-align: center;
       color: sandybrown;
     }
 
-    .bg .img{
+    .bg .img {
       position: absolute;
       /* background-image: url('./img/轲爱🐖.jpg'); */
       background-repeat: no-repeat;
@@ -84,27 +52,27 @@
       top: 0;
       bottom: 0;
       margin: auto;
-      width: 5.333333rem;
-      height: 8rem;
+      width: 12.5rem;
+      height: 18.75rem;
       object-fit: cover;
-      border-radius: 0.133333rem;
+      border-radius: 0.3125rem;
       opacity: 0.9;
     }
 
     .glass {
       background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(0.133333rem);
-      border-radius: 0.266667rem;
+      backdrop-filter: blur(0.3125rem);
+      border-radius: 0.625rem;
     }
 
 
 
     .password {
       position: absolute;
-      top: 5.333333rem;
-      left: 2.933333rem;
-      width: 0.933333rem;
-      height: 0.4rem;
+      top: 12.5rem;
+      left: 6.875rem;
+      width:2.1875rem;
+      height: 0.9375rem;
     }
   </style>
 </head>
@@ -127,9 +95,6 @@
 
 
 </body>
-<script src="./component/progress/progress.js"></script>
-<script src="./component/land/land.js"></script>
-<script src="./component/notify/notify.js"></script>
 <script>
   window.onload = function () {
 
@@ -147,14 +112,14 @@
         }, 20, 3)
 
 
-        setTimeout(()=>{
-          location.href = '/圣诞树.html';
-        },3000)
+        setTimeout(() => {
+          location.href = '/3D-圣诞树.html';
+        }, 3000)
       });
     });
 
     $('.password').on('touchend', function () {
-      outProgress().then((res)=>{
+      outProgress().then((res) => {
         notifyFun('这么不想亲我吗🤬', {
           color: '#fff'
         }, 5)
@@ -162,10 +127,6 @@
     });
 
   }
-
-
-
-
 </script>
 
 </html>

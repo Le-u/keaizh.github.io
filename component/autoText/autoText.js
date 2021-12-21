@@ -15,7 +15,7 @@ var autoText = function (tag, txt, style, speed = 200) {
 
     $('#autoText').text(str);
 
-    if (i == text.length - 1) {
+    if (i == txt.length - 1) {
       clearInterval(time);
       i = 0;
     }
