@@ -1,0 +1,29 @@
+.photo-box {
+  position: absolute;
+  top: 0;
+  transition: 5s linear;
+  /* margin: auto; */
+  width: auto;
+  height: 3.125rem;
+  background-color: rosybrown;
+}
+
+.photo-box .photo-img{
+  height: 3.125rem;
+  object-fit: cover;
+}
+
+.photo-box .bubble {
+  position: absolute;
+  top: 0;
+  /* left: 115%; */
+  bottom: 0;
+  margin: auto;
+  height: 1.625rem;
+  border-radius: 0.3125rem;
+  overflow: hidden;
+  padding: 0.3125rem 0;
+  background-color: #fff;
+  white-space:nowrap;
+  font-size: 0.75rem;
+}

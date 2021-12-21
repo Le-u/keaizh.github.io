@@ -9,61 +9,191 @@
   <link rel="icon" href="./img/培.jpg" type="image/x-icon">
   <script src="./jquer.min.js"></script>
 
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="./component/snow/snow.css">
+  <link rel="stylesheet" href="./component/autoText/autoText.css">
+  <link rel="stylesheet" href="./component/photo/photo.css">
+  <link rel="stylesheet" href="./component/notify/notify.css">
+  <script src="./component/notify/notify.js"></script>
+  <script src="./component/autoText/autoText.js"></script>
   <script src="./component/snow/snow.js"></script>
+  <script src="./component/photo/photo.js"></script>
   <style>
-    @font-face {
-      font-family: 'ZoomlaYuan-A016';
-      /* 逐浪圆体 */
-      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix');
-      /* IE9 */
-      src: url('https://code.z01.com/font/ZoomlaYuan-A016.eot?#iefix') format("embedded-opentype"),
-        /* IE6-IE8 */
-        url('https://code.z01.com/font/ZoomlaYuan-A016.woff') format("woff"),
-        /* chrome、firefox */
-        url('https://code.z01.com/font/ZoomlaYuan-A016.ttf') format("truetype"),
-        /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
-        url('https://code.z01.com/font/ZoomlaYuan-A016.svg#ZoomlaYuan-A016') format("svg");
-      /* iOS 4.1- */
-      font-style: normal;
-      font-weight: normal;
+    body {
+      overflow: hidden;
+      background-image: url('./img/圣诞树3.png');
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-position: center bottom;
     }
 
-    * {
-      box-sizing: border-box;
-    }
- 
-    html,
-    body {
+    .box {
       width: 100%;
       height: 100%;
-      margin: 0;
-      padding: 16px;
-      border: 0;
-      position: relative;
-      font-family: ZoomlaYuan-A016;
-      overflow: hidden;
-
-      background-color: slategrey;
     }
 
-
-   
-
-    img{
+    .box .box-content {
       width: 100%;
+      height: calc(100% - 0.625rem);
     }
-    
+
+
+
+    .box .ground {
+      height: 0.625rem;
+      background-color: #fff;
+    }
+
+
+    .notify-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 18.75rem;
+      height: 37.5rem;
+      z-index: 30;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .notify-box input {
+      width: 12.5rem;
+      height: 1.875rem;
+      border: 0;
+      outline: none;
+      padding: 0 0.625rem;
+      border-radius: 0.3125rem;
+      background-color: #fff;
+      opacity: 0.8;
+    }
+
+
+    .font {
+      position: absolute;
+      font-size: 3.125rem;
+    }
+
+    .shen {
+      top: 1.875rem;
+      left: 3.75rem;
+      color:orangered;
+    }
+
+    .dan {
+      top: 3.75rem;
+      left: 8.4375rem;
+      color: midnightblue;
+    }
+
+    .kuai {
+      top: 1.875rem;
+      left: 12.1875rem;
+      color: palevioletred;
+    }
+
+    .le {
+      top: 1.875rem;
+      left: 15.9375rem;
+      color: rebeccapurple;
+    }
   </style>
 </head>
 
 <body>
-  培
-  <img src="./img/圣诞树2.png" alt="">
+  <div class="shen font">圣</div>
+  <div class="dan font">诞</div>
+  <div class="kuai font">快</div>
+  <div class="le font">乐</div>
 
+  <div class="box">
+    <div class="box-content"></div>
+    <div class="ground"></div>
+  </div>
+
+
+  <div class="notify-box glass">
+    <input type="text">
+    <div class="find">查找</div>
+  </div>
 </body>
 <script>
   snow()
+
+
+  var sun = [{
+        top: '15.625rem',
+        left: '5.5rem',
+        text: '我好看吧',
+        speed: 2,
+        url: "./img/培.jpg",
+        direction: {
+          right: '115%'
+        },
+
+      }, {
+        top: '28.125rem',
+        left: '11.75rem',
+        text: '疯子',
+        speed: 2,
+        url: "./img/培2.jpg",
+        direction: {
+          right: '115%'
+        },
+      }, {
+
+        top: '22.1875rem',
+        left: '9.0625rem',
+        text: '美德冒泡了',
+        speed: 2,
+        url: "./img/培3.jpg",
+        direction: {
+          left: '115%'
+        },
+      }
+
+    ],
+    han = [{
+      top: '12.5rem',
+      left: '9.875rem',
+      text: '你是那个瓜娃子',
+      speed: 2,
+      url: "./img/轲爱🐖.jpg",
+      direction: {
+        left: '115%'
+      }
+    }]
+
+
+
+  $('.find').click(function () {
+
+    switch ($('.notify-box input').val()) {
+      case '孙硕培':
+        $('.notify-box').hide()
+        photoLand(sun)
+        break;
+      case '韩璐轲':
+        notifyFun('😶怎么可能有她的啊，是不是有病')
+        break;
+      case '刘海波':
+        notifyFun('😶我怎么会把我的弄让去。。。')
+        break;
+      case '刘硕鹏':
+        notifyFun('😶这个也没有')
+        break;
+      default:
+        notifyFun('不认识')
+        break;
+    }
+
+  })
+
+  $('body').click(showBubble)
 </script>
 
 </html>

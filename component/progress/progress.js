@@ -1,10 +1,19 @@
+/*
+配合标签使用
+<div class="glass glass-module">
+    <div class="progress-text">100%</div>
+    <div class="progress"></div>
+  </div>
+*/
+
+
 let progress = 0;
 let enterTime = null,
   outTime = null;
 
 function enterProgress() {
 
-  return new Promise((res)=>{
+  return new Promise((res) => {
     $('.glass-module').show();
     if (progress === 100) {
       progress = 0;
@@ -18,7 +27,7 @@ function enterProgress() {
         $('.progress').css({
           width: progress + '%'
         })
-  
+
         if (progress === 100) {
           clearInterval(enterTime)
           enterTime = null;
@@ -34,25 +43,25 @@ function enterProgress() {
 
 
 function outProgress() {
- return new Promise((res)=>{
-  if (!outTime && progress !== 100) {
-    clearInterval(enterTime);
-    enterTime = null;
-    outTime = setInterval(() => {
-      progress--;
-      $('.progress-text').text(progress + '%')
-      $('.progress').css({
-        width: progress + '%'
-      })
+  return new Promise((res) => {
+    if (!outTime && progress !== 100) {
+      clearInterval(enterTime);
+      enterTime = null;
+      outTime = setInterval(() => {
+        progress--;
+        $('.progress-text').text(progress + '%')
+        $('.progress').css({
+          width: progress + '%'
+        })
 
-      if (!progress || progress < 0) {
-        $('.glass-module').hide();
-        clearInterval(outTime)
-        outTime = null;
-        res(progress);
-      }
-    }, 50)
-  }
- })
+        if (!progress || progress < 0) {
+          $('.glass-module').hide();
+          clearInterval(outTime)
+          outTime = null;
+          res(progress);
+        }
+      }, 50)
+    }
+  })
 
 }
