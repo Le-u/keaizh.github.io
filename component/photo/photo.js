@@ -12,14 +12,13 @@ var photoLand = function (position) {
           transform: `rotate(${(Math.random() * -90) + 45 + 'deg'})`,
           // ...style
         })
-        .appendTo('body')
+        .appendTo('.bg-christmas-tree')
       photo(position[i].text, photoBox, position[i].direction)
       photoBox.css({
         top: position[i].top,
       })
       i++
     } else {
-      console.log('//');
       clearInterval(tiem)
     }
 

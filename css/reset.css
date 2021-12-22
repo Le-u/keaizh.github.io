@@ -18,6 +18,9 @@
 * {
   box-sizing: border-box;
 }
+html{
+  font-size: 10vw;
+}
 
 html,
 body {
@@ -46,7 +49,7 @@ ul,li{
 
 .glass {
   background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(0.3125rem);
-  border-radius: 0.625rem;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
 }
 

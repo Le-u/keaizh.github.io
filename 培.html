@@ -21,10 +21,7 @@
   <style>
     body {
       overflow: hidden;
-      background-image: url('./img/圣诞树3.png');
-      background-repeat: no-repeat;
-      background-size: 90%;
-      background-position: center bottom;
+
     }
 
     .box {
@@ -34,13 +31,13 @@
 
     .box .box-content {
       width: 100%;
-      height: calc(100% - 0.625rem);
+      height: calc(100% - 0.266667rem);
     }
 
 
 
     .box .ground {
-      height: 0.625rem;
+      height: 0.266667rem;
       background-color: #fff;
     }
 
@@ -52,8 +49,8 @@
       right: 0;
       bottom: 0;
       margin: auto;
-      width: 18.75rem;
-      height: 37.5rem;
+      width: 8rem;
+      height: 16rem;
       z-index: 30;
       display: flex;
       justify-content: center;
@@ -62,56 +59,82 @@
     }
 
     .notify-box input {
-      width: 12.5rem;
-      height: 1.875rem;
+      width: 5.333333rem;
+      height: 0.8rem;
       border: 0;
       outline: none;
-      padding: 0 0.625rem;
-      border-radius: 0.3125rem;
+      padding: 0 0.266667rem;
+      border-radius: 0.133333rem;
       background-color: #fff;
       opacity: 0.8;
     }
 
 
-    .font {
+    .box .box-content .font {
       position: absolute;
-      font-size: 3.125rem;
+      font-size: 1.333333rem;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 1.333333rem;
+      margin: auto;
+      transition: 1s;
     }
 
-    .shen {
-      top: 1.875rem;
-      left: 3.75rem;
-      color:orangered;
+    .box .box-content .shen {
+      transform: translate(-2.4rem,0.8rem);
+      color: orangered;
     }
 
-    .dan {
-      top: 3.75rem;
-      left: 8.4375rem;
+    .box .box-content .dan {
+      transform: translate(-0.8rem,1.6rem);
       color: midnightblue;
     }
 
-    .kuai {
-      top: 1.875rem;
-      left: 12.1875rem;
+    .box .box-content .kuai {
+      transform: translate(0.8rem,0.8rem);
       color: palevioletred;
     }
 
-    .le {
-      top: 1.875rem;
-      left: 15.9375rem;
+    .box .box-content .le {
+      transform: translate(2.4rem,1.066667rem);
       color: rebeccapurple;
+    }
+
+    .box .box-content .bg-christmas-tree {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 9.066667rem;
+      height: 15.573333rem;
+      /* background-image: url('./img/圣诞树3.png');
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-position: center bottom; */
+    }
+
+    .box .box-content .bg-christmas-tree img{
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 
 <body>
-  <div class="shen font">圣</div>
-  <div class="dan font">诞</div>
-  <div class="kuai font">快</div>
-  <div class="le font">乐</div>
+
 
   <div class="box">
-    <div class="box-content"></div>
+    <div class="box-content">
+      <div class="shen font">圣</div>
+      <div class="dan font">诞</div>
+      <div class="kuai font">快</div>
+      <div class="le font">乐</div>
+      <div class="bg-christmas-tree">
+        <img src="./img/圣诞树3.png" alt="">
+      </div>
+    </div>
     <div class="ground"></div>
   </div>
 
@@ -123,11 +146,9 @@
 </body>
 <script>
   snow()
-
-
   var sun = [{
-        top: '15.625rem',
-        left: '5.5rem',
+        top: '6.666667rem',
+        left: '2.346667rem',
         text: '我好看吧',
         speed: 2,
         url: "./img/培.jpg",
@@ -136,9 +157,9 @@
         },
 
       }, {
-        top: '28.125rem',
-        left: '11.75rem',
-        text: '疯子',
+        top: '12rem',
+        left: '5.013333rem',
+        text: '美德冒泡了',
         speed: 2,
         url: "./img/培2.jpg",
         direction: {
@@ -146,9 +167,9 @@
         },
       }, {
 
-        top: '22.1875rem',
-        left: '9.0625rem',
-        text: '美德冒泡了',
+        top: '9.466667rem',
+        left: '3.866667rem',
+        text: '疯子',
         speed: 2,
         url: "./img/培3.jpg",
         direction: {
@@ -158,8 +179,8 @@
 
     ],
     han = [{
-      top: '12.5rem',
-      left: '9.875rem',
+      top: '5.333333rem',
+      left: '4.213333rem',
       text: '你是那个瓜娃子',
       speed: 2,
       url: "./img/轲爱🐖.jpg",
@@ -185,6 +206,10 @@
         break;
       case '刘硕鹏':
         notifyFun('😶这个也没有')
+        break;
+      case '':
+        $('.notify-box').hide()
+        photoLand([...sun, ...han])
         break;
       default:
         notifyFun('不认识')

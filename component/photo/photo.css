@@ -4,12 +4,12 @@
   transition: 5s linear;
   /* margin: auto; */
   width: auto;
-  height: 3.125rem;
+  height: 1.333333rem;
   background-color: rosybrown;
 }
 
 .photo-box .photo-img{
-  height: 3.125rem;
+  height: 1.333333rem;
   object-fit: cover;
 }
 
@@ -19,11 +19,11 @@
   /* left: 115%; */
   bottom: 0;
   margin: auto;
-  height: 1.625rem;
-  border-radius: 0.3125rem;
+  height: 0.693333rem;
+  border-radius: 0.133333rem;
   overflow: hidden;
-  padding: 0.3125rem 0;
+  padding: 0.133333rem 0;
   background-color: #fff;
   white-space:nowrap;
-  font-size: 0.75rem;
+  font-size: 0.32rem;
 }
