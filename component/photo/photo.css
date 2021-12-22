@@ -11,6 +11,7 @@
 .photo-box .photo-img{
   height: 1.333333rem;
   object-fit: cover;
+  border-radius: 0.08rem;
 }
 
 .photo-box .bubble {

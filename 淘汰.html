@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <title>🐖</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="./jquer.min.js"></script>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2898773_62xe8cwnq05.css">
+  <!-- 导入插件 -->
+  <link rel="stylesheet" href="./component/progress/progress.css">
+  <link rel="stylesheet" href="./component/land/land.css">
+  <link rel="stylesheet" href="./component/notify/notify.css">
+  <script src="./component/progress/progress.js"></script>
+  <script src="./component/land/land.js"></script>
+  <script src="./component/notify/notify.js"></script>
+  <style>
+
+    body {
+      background-image: url('./img/圣诞.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 0;
+    }
+
+    .bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 6.666667rem;
+      height: 12rem;
+      text-align: center;
+      color: sandybrown;
+    }
+
+    .bg .img {
+      position: absolute;
+      /* background-image: url('./img/轲爱🐖.jpg'); */
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 5.333333rem;
+      height: 8rem;
+      object-fit: cover;
+      border-radius: 0.133333rem;
+      opacity: 0.9;
+    }
+
+   
+
+
+    .password {
+      position: absolute;
+      top: 5.333333rem;
+      left: 2.933333rem;
+      width:0.933333rem;
+      height: 0.4rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg glass">
+    <div class="img"></div>
+    <div class="password"></div>
+    <div>先解锁</div>
+  </div>
+
+  
+
+  <div class="glass glass-module">
+    <div class="progress-text">100%</div>
+    <div class="progress"></div>
+  </div>
+
+
+</body>
+<script>
+  window.onload = function () {
+
+    $(".password").on('touchstart', function () {
+      enterProgress().then((res) => {
+        notifyFun('解锁成功，下次要多亲一会😠', {
+          color: '#fff'
+        }, 5)
+
+        landFun('♥', {
+          color: 'red'
+        }, 20, 3)
+        landFun('😙', {
+          color: 'red'
+        }, 20, 3)
+
+
+        setTimeout(() => {
+          location.href = '/3D-圣诞树.html';
+        }, 3000)
+      });
+    });
+
+    $('.password').on('touchend', function () {
+      outProgress().then((res) => {
+        notifyFun('这么不想亲我吗🤬', {
+          color: '#fff'
+        }, 5)
+      })
+    });
+
+  }
+</script>
+
+</html>
