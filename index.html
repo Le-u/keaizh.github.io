@@ -89,7 +89,7 @@
 
     .box .box-content .shen {
       transform: translate(-2.4rem, 0.8rem);
-      color:darkmagenta;
+      color: darkmagenta;
     }
 
     .box .box-content .dan {
@@ -151,41 +151,52 @@
   </div>
 </body>
 <script>
-  window.onload = function(){
+  window.onload = function () {
     snow()
-  var sun = [{
-        top: '6.666667rem',
-        left: '2.346667rem',
-        text: '我好看吧',
-        speed: 2,
-        url: "./img/培.jpg",
-        direction: {
-          right: '115%'
-        },
+    var sun = [{
+      top: '6.666667rem',
+      left: '2.346667rem',
+      text: '我好看吧',
+      speed: 2,
+      url: "./img/孙0.jpg",
+      direction: {
+        right: '115%'
+      },
 
-      }, {
-        top: '12rem',
-        left: '5.013333rem',
-        text: '美德冒泡了',
-        speed: 2,
-        url: "./img/培2.jpg",
-        direction: {
-          right: '115%'
-        },
-      }, {
+    }, {
+      top: '12rem',
+      left: '5.013333rem',
+      text: '美德冒泡了',
+      speed: 2,
+      url: "./img/孙1.jpg",
+      direction: {
+        right: '115%'
+      },
+    }, {
 
-        top: '9.466667rem',
-        left: '3.866667rem',
-        text: '疯子',
-        speed: 2,
-        url: "./img/培3.jpg",
-        direction: {
-          left: '115%'
-        },
-      }
+      top: '9.466667rem',
+      left: '3.866667rem',
+      text: '疯子',
+      speed: 2,
+      url: "./img/孙2.jpg",
+      direction: {
+        left: '115%'
+      },
+    },
+    {
+
+      top: '12.8rem',
+      left: '3.466667rem',
+      text: '疯子',
+      speed: 2,
+      url: "./img/孙3.jpg",
+      direction: {
+        left: '115%'
+      },
+    }
 
     ],
-    han = [{
+      han = [{
         top: '5.333333rem',
         left: '4.213333rem',
         text: '我漂亮吗',
@@ -196,7 +207,7 @@
         }
       },
       {
-        top: '2.133333rem' ,
+        top: '2.133333rem',
         left: '4.213333rem',
         text: '又是美美的一天',
         speed: 2,
@@ -206,8 +217,8 @@
         }
       },
       {
-        top: '10.666667rem' ,
-        left: '2.666667rem' ,
+        top: '10.666667rem',
+        left: '2.666667rem',
         text: '刘海波永远最大',
         speed: 2,
         url: "./img/轲2.jpg",
@@ -216,8 +227,8 @@
         }
       },
       {
-        top: '10.106667rem' ,
-        left: '7.146667rem' ,
+        top: '10.106667rem',
+        left: '7.146667rem',
         text: '我爱刘海波',
         speed: 2,
         url: "./img/轲3.jpg",
@@ -226,8 +237,8 @@
         }
       },
       {
-        top: '12.8rem' ,
-        left: '4rem' ,
+        top: '12.8rem',
+        left: '4rem',
         text: '刘海波永远是对的',
         speed: 2,
         url: "./img/轲4.jpg",
@@ -245,64 +256,64 @@
           left: '115%'
         }
       }
-    ]
+      ]
 
 
 
-  $('.find').click(function () {
+    $('.find').click(function () {
 
-    switch ($('.notify-box input').val()) {
-      case '孙硕培':
-        $('.notify-box').hide()
-        photoLand(sun, maxPhoto, notifyFun)
-        notifyFun('好好看看你的孙硕培')
-        break;
-      case '韩璐轲':
-        $('.notify-box').hide()
-        photoLand(han, maxPhoto, notifyFun)
-        // notifyFun('😶怎么可能有她的啊，是不是有病')
-        break;
-      case '刘海波':
-        notifyFun('😶我怎么会把我的弄让上去。。。')
-        break;
-      case '刘硕鹏':
-        notifyFun('😶这个也没有')
-        break;
+      switch ($('.notify-box input').val()) {
+        case '孙硕培':
+          $('.notify-box').hide()
+          photoLand(sun, maxPhoto, notifyFun)
+          // notifyFun('好好看看你的孙硕培')
+          break;
+        case '韩璐轲':
+          $('.notify-box').hide()
+          photoLand(han, maxPhoto, notifyFun)
+          // notifyFun('😶怎么可能有她的啊，是不是有病')
+          break;
+        case '刘海波':
+          notifyFun('😶我怎么会把我的弄让上去。。。')
+          break;
+        case '刘硕鹏':
+          notifyFun('😶这个也没有')
+          break;
         // case '':
         //   $('.notify-box').hide()
         //   photoLand([...sun, ...han],maxPhoto)
         //   break;
-      default:
-        notifyFun('不认识')
-        break;
-    }
+        default:
+          notifyFun('不认识')
+          break;
+      }
 
-  })
-
-
-  $('.maxPhoto').click(function (e) {
-    prevX(e)
-  })
-
-
-  $('.maxPhoto').on('click', '.icon-qianjin', function (e) {
-    e.stopPropagation();
-    next(e).then(() => {
-      notifyFun('最后一张了')
     })
-  })
 
-  $('.maxPhoto').on('click', '.icon-houtui', function (e) {
-    e.stopPropagation();
-    prev(e).then(() => {
-      notifyFun('第一张')
+
+    $('.maxPhoto').click(function (e) {
+      prevX(e)
     })
-  })
 
-  
-  $('body').click(function(){
-    showBubble()
-  })
+
+    $('.maxPhoto').on('click', '.icon-qianjin', function (e) {
+      e.stopPropagation();
+      next(e).then(() => {
+        notifyFun('最后一张了')
+      })
+    })
+
+    $('.maxPhoto').on('click', '.icon-houtui', function (e) {
+      e.stopPropagation();
+      prev(e).then(() => {
+        notifyFun('第一张')
+      })
+    })
+
+
+    $('body').click(function () {
+      showBubble()
+    })
   }
 </script>
 
