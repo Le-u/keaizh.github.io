@@ -278,7 +278,6 @@
 
   })
 
-  $('body').click(showBubble())
 
   $('.maxPhoto').click(function (e) {
     prevX(e)
@@ -286,7 +285,6 @@
 
 
   $('.maxPhoto').on('click', '.icon-qianjin', function (e) {
-    console.log(e);
     e.stopPropagation();
     next(e).then(() => {
       notifyFun('最后一张了')
@@ -294,11 +292,15 @@
   })
 
   $('.maxPhoto').on('click', '.icon-houtui', function (e) {
-    console.log(e);
     e.stopPropagation();
     prev(e).then(() => {
       notifyFun('第一张')
     })
+  })
+
+  
+  $('body').click(function(){
+    showBubble()
   })
 </script>
 
