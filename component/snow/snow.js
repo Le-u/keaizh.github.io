@@ -3,7 +3,7 @@
   // speed(number/string): 下降速度
   // intensive(number): 密度
   
-  var snow = function (url = './img/雪花.png', style, speed = 5,intensive = 50) {
+  var snow = function (url = '../img/雪花.png', style, speed = 5,intensive = 50) {
     setInterval(() => {
         var land = $('<div class="snow"></div>')
           .css({
